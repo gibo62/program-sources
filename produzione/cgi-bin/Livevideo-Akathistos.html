@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <!-- Pagina con Video Live per Nostra Signora di Valme -->
+    <title>LIVE VIDEO - NOSTRA SIGNORA DI VALME</title>
+
+ </head>
+
+  <body>
+      <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  
+  
+  <div align="center">
+  <div><a href="https://www.valme.net" ><img src="https://2.bp.blogspot.com/-70soZ2cyd08/UJExfMQp-eI/AAAAAAAAAHk/30PxHmxFFP0/s1600/header.jpg" alt="Parrocchia Nostra Signora di Valme - Villa Bonelli Roma"  style="margin-top:0px" /></a>
+  </div>
+  
+  <div align="center">
+      <div id="tabla" style="overflow: hidden;">
+      <table style="width:100%;margin-top:-80px;"><tbody>
+      <tr>  <th  width="59%"><video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls autoplay preload="auto" data-setup='{"fluid": false}' width="100%" height="800px"></video>
+      <script>
+        if(Hls.isSupported()) {
+          var video = document.getElementById('video');
+          var hls = new Hls();
+          hls.loadSource('https://erosvm3.indigitaleweb.com/live_valme/valme.stream/playlist.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED,function() {
+            video.play();
+        });
+       }
+       // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+       // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+       // This is using the built-in support of the plain video element, without using hls.js.
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = 'https://erosvm3.indigitaleweb.com/live_valme/valme.stream/playlist.m3u8';
+          video.addEventListener('canplay',function() {
+            video.play();
+          });
+        }
+      </script>
+    
+</th>
+<th width="41%"><br /><br /><br /><br /><iframe height="700" width="100%" src="https://appoggio.nsvalme.cloud/nsvalme/pdf/Testo%20Akathistos.pdf" style="border-bottom: medium none; border-left: medium none; border-right: medium none; border-top: medium none;"></iframe>
+ </th>
+
+</tr>
+</tbody></table>
+
+</div>
+
+
+
+<div style="text-align:center; font-size:18px; margin-top: 20px"> <a href=" https://www.valme.net/p/perchi-usa-il-navigatore-google-chrome.html">ATTENZIONE: Clicca qui  se non riesci a vedere la Telecamera</a> </div>
+
+
+<div><center><a href="https://www.valme.net" ><img src="https://3.bp.blogspot.com/-YOua3YM4mF4/UI_bJyoih9I/AAAAAAAAAGM/oq7x-UqHOtU/s1600/footer.jpg" alt="Parrocchia Nostra Signora di Valme - Villa Bonelli Roma" 
+   style="margin-top:20px" /></a>
+</center></div>
+
+</body>
+</html>
+
