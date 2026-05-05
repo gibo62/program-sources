@@ -3,17 +3,20 @@ import ftplib
 from urllib.parse import unquote
 import re
 import datetime
+import socket
+
 
 def write_log(message):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log.write(f"[{timestamp}] {message}\n")
-    
+    log.write(f"[{nome_pc}] [{timestamp}] {message}\n")
+
+nome_pc = socket.gethostname()    
 drivepath='g:\\il mio drive\\sanbartolome\\'
 log= open(drivepath+"ftptrasfer.log", "a")  # append mode
 write_log("Attività iniziata")
 
 with ftplib.FTP("sbartolome.nsvalme.cloud", "sanbartolome", "Siviglia!2026") as ftp:
-    ftp.cwd('/home/sanbartolome')
+    ftp.cwd('/home/recording')
     filenames = ftp.nlst()
     print (filenames)
 

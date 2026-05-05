@@ -3,10 +3,13 @@ import ftplib
 from urllib.parse import unquote
 import re
 import datetime
+import socket
+
+nome_pc = socket.gethostname()
 
 def write_log(message):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log.write(f"[{timestamp}] {message}\n")
+    log.write(f"[{nome_pc} {timestamp}] {message}\n")
     
 drivepath='g:\\il mio drive\\recording\\'
 log= open(drivepath+"ftptrasfer.log", "a")  # append mode
